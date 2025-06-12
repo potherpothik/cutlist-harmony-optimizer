@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { SpreadsheetTable } from '@/components/SpreadsheetTable';
 import { ProfileSizeInput } from '@/components/ProfileSizeInput';
 import { ResultsDisplay } from '@/components/ResultsDisplay';
+import { InstallPrompt } from '@/components/InstallPrompt';
 import { optimizeCutlist } from '@/lib/optimizer';
 import { useToast } from '@/hooks/use-toast';
 
@@ -101,6 +101,9 @@ const Index = () => {
           <p className="text-lg text-slate-600">
             Advanced bin packing algorithm for optimal material utilization
           </p>
+          <div className="mt-4 text-sm text-slate-500 bg-green-50 border border-green-200 rounded-lg p-3 inline-block">
+            ✅ Works completely offline - no internet required!
+          </div>
         </div>
 
         {/* Configuration Section */}
@@ -213,6 +216,9 @@ const Index = () => {
           </Card>
         )}
       </div>
+      
+      {/* Install Prompt */}
+      <InstallPrompt />
     </div>
   );
 };
